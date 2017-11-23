@@ -27,13 +27,14 @@ https://discord.gg/Mn3HJS6
 
 ## Installation
 
-Follow these instructions to run imgwelcome:
+Follow these instructions to run Bank:
 
 1. open *terminal* > *npm install*
 2. Add a node modules
     * `npm install discord.js`
     * `npm install fs`
-
+3. Extract `UserAccount.rar`
+    
 ## Configuration
 
 1. open *config.json*
@@ -119,5 +120,5 @@ Added new command :
 ```
 ## Reporting problems
 
-*Thanks*. Please [report any problems in imgwelcome](https://github.com/malekdrmalek/Bank-Discord/issues).
+*Thanks*. Please [report any problems in Bank](https://github.com/malekdrmalek/Bank-Discord/issues).
 
