@@ -75,7 +75,7 @@ bot.on('message', (message) => {
             result = AccountUser.amount * config.convert;
             if (IdUser == config.owner) { ColorStatusAccount = 11931400;} else{ ColorStatusAccount =3447003;}
             console.log("["+timeInMs+"]" + "[System] The account of " + username + " has "+ result + " € !" + " Id of the account : " + IdUser);
-            message.channel.sendEmbed({color: ColorStatusAccount,author: {name: "Your customer area " + username,icon_url: bot.users.get(IdUser).displayAvatarURL,},fields: [{name: 'Nom du compte :',value: AccountUser.username},{name: 'ID de votre compte :',value: AccountUser.IdUser},{name: 'Type de compte :',value: AccountUser.status},{name: 'Solde de votre compte :',value: result + " €"},{name: 'Date de la dernière demande de PEL :',value: AccountUser.lastpel}],timestamp: new Date(),footer: {text: '© La Tablée'}});
+            message.channel.sendEmbed({color: ColorStatusAccount,author: {name: "Your customer area " + username,icon_url: bot.users.get(IdUser).displayAvatarURL,},fields: [{name: 'Account name :',value: AccountUser.username},{name: 'Your account ID :',value: AccountUser.IdUser},{name: 'Type of account :',value: AccountUser.status},{name: 'Your account balance :',value: result + " €"},{name: 'Date of the last PEL application:',value: AccountUser.lastpel}],timestamp: new Date(),footer: {text: '©Jack Marten'}});
         } else {
         console.log("["+timeInMs+"]" + "[System] The account of " + username + " is not in the db. Id of the user : " + IdUser);
         message.reply(" you do not have to create an account! Please make '[p] register' in the chat! ");}
@@ -91,7 +91,7 @@ bot.on('message', (message) => {
             var AccountUser = JSON.parse(fs.readFileSync("./UserAccount/"+ InfoAccountId + ".json"));
             console.log("["+timeInMs+"]" + "[System] Account_Name : " + AccountUser.username + " | ID_Account : "+ AccountUser.IdUser);
             console.log("["+timeInMs+"]" + "[System] Amount : " + (AccountUser.amount*config.convert) + " | Last_PEL : "+ AccountUser.lastpel);
-            message.channel.sendEmbed({color: ColorStatusAccount,author:{name: "Account info of " + InfoAccountId,icon_url: bot.users.get(InfoAccountId).displayAvatarURL},fields:[{name: 'Username :',value: AccountUser.username},{name: 'ID of the Account :',value: AccountUser.IdUser},{name: 'Type of Account :',value: AccountUser.status},{name: 'Amount :',value: (AccountUser.amount*config.convert)+ " €"},{name: 'Last PEL Command :',value:AccountUser.lastpel}],timestamp: new Date(),footer: {text: '© La Tablée'}}); 
+            message.channel.sendEmbed({color: ColorStatusAccount,author:{name: "Account info of " + InfoAccountId,icon_url: bot.users.get(InfoAccountId).displayAvatarURL},fields:[{name: 'Username :',value: AccountUser.username},{name: 'ID of the Account :',value: AccountUser.IdUser},{name: 'Type of Account :',value: AccountUser.status},{name: 'Amount :',value: (AccountUser.amount*config.convert)+ " €"},{name: 'Last PEL Command :',value:AccountUser.lastpel}],timestamp: new Date(),footer: {text: '©Jack Marten'}}); 
         } else {
         console.log("["+timeInMs+"]" + "[System] 0 Account found for the ID : " + InfoAccountId);
         message.reply(" No account is listed with the ID: " + InfoAccountId);}
@@ -206,7 +206,7 @@ bot.on('message', (message) => {
     else if(command === "AboutBot") {
         time = time+1;
         console.log("["+timeInMs+"]" + "[System] " + username + " send the command > [p]AboutBot < " );
-        const embed = new Discord.RichEmbed().setAuthor(bot.user.username, 'https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Money-32.png').setThumbnail('https://yt3.ggpht.com/-hgoKcvX8liw/AAAAAAAAAAI/AAAAAAAAAAA/Dxr1P16Ll6Y/s900-c-k-no-mo-rj-c0xffffff/photo.jpg').setColor(0x00AE86).setFooter('© La Tablée').setTimestamp().addField('Créer par :','[La Tablée © | Tout droit réservé ](http://latablee.galilol.xyz/)').addField('Version du bot :', config.version, true).addField('\u200b', '\u200b', true).addField('Dernière mise à jour le :', config.lastUpdate, true);
+        const embed = new Discord.RichEmbed().setAuthor(bot.user.username, 'https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Money-32.png').setThumbnail('https://yt3.ggpht.com/-hgoKcvX8liw/AAAAAAAAAAI/AAAAAAAAAAA/Dxr1P16Ll6Y/s900-c-k-no-mo-rj-c0xffffff/photo.jpg').setColor(0x00AE86).setFooter('©Jack Marten').setTimestamp().addField('Créer par :','[La Tablée © | Tout droit réservé ](http://latablee.galilol.xyz/)').addField('Version du bot :', config.version, true).addField('\u200b', '\u200b', true).addField('Dernière mise à jour le :', config.lastUpdate, true);
         message.channel.sendEmbed(embed);    
     }
     //command for the id of the client
